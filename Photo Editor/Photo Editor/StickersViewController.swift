@@ -177,7 +177,7 @@ class StickersViewController: UIViewController, UIGestureRecognizerDelegate {
     func removeBottomSheetView() {
         UIView.animate(withDuration: 0.3,
                        delay: 0,
-                       options: UIView.AnimationOptions.curveEaseIn,
+                       options: UIViewAnimationOptions.curveEaseIn,
                        animations: { () -> Void in
                         var frame = self.view.frame
                         frame.origin.y = UIScreen.main.bounds.maxY
@@ -185,7 +185,7 @@ class StickersViewController: UIViewController, UIGestureRecognizerDelegate {
                         
         }, completion: { (finished) -> Void in
             self.view.removeFromSuperview()
-            self.removeFromParent()
+            self.removeFromParentViewController()
             self.stickersViewControllerDelegate?.stickersViewDidDisappear()
         })
     }
